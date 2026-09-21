@@ -15,32 +15,25 @@ export default function Experience() {
 
   const experiences = [
     {
-      period: '2025 – PRESENT',
-      role: 'Business Development / Sales Expert',
-      company: 'Company Name',
-      description:
-        'Managing business development activities, generating qualified leads, building client relationships and contributing to revenue growth.',
-    },
-    {
       period: '2024 – PRESENT',
-      role: 'Sales & Business Development Consultant',
-      company: 'Freelance / Self-Employed',
+      role: 'Senior Meta Ads Specialist',
+      company: 'Digital Growth Agency / Freelance',
       description:
-        'Helping businesses identify new opportunities, improve client acquisition and develop effective sales strategies.',
+        'Managing high-budget Meta Ad campaigns across Facebook & Instagram for US & European e-commerce and lead generation brands. Focusing on custom audience scaling, ROAS optimization, and CAPI tracking.',
     },
     {
       period: '2023 – 2024',
-      role: 'Inside Sales & Lead Generation Specialist',
-      company: 'Company Name',
+      role: 'Paid Social Media Strategist',
+      company: 'Global Performance Marketing Co.',
       description:
-        'Running outbound prospecting and lead-generation campaigns, managing the CRM and converting qualified prospects into the sales pipeline.',
+        'Designed high-converting ad copy and visual creative frameworks, ran continuous A/B testing, and lowered customer acquisition costs (CAC) for international client accounts.',
     },
     {
       period: '2022 – 2023',
-      role: 'Sales Support & Client Relations',
-      company: 'Company Name',
+      role: 'Facebook & Instagram Ads Campaign Manager',
+      company: 'E-commerce Scale Lab',
       description:
-        'Supporting the sales team with client communication, proposals, follow-ups and day-to-day account management.',
+        'Handled end-to-end ad account setups, Pixel integrations, funnel retargeting, and audience segmentation to scale ROAS across diverse global target markets.',
     },
   ];
 
@@ -103,7 +96,7 @@ export default function Experience() {
             </p>
           </div>
           <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            My Professional <span className="text-orange-500">Journey</span>
+            My Paid Social <span className="text-orange-500">Track Record</span>
           </h2>
         </div>
 

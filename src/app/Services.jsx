@@ -8,8 +8,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   FiTarget,
   FiTrendingUp,
+  FiDollarSign,
+  FiLayers,
+  FiPieChart,
 } from 'react-icons/fi';
-import { FaHandshake } from 'react-icons/fa';
+import { FaMeta } from 'react-icons/fa6';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,40 +22,40 @@ export default function Services() {
 
   const services = [
     {
-      title: 'Sales Development',
+      title: 'Meta Ads Campaign Setup',
       description:
-        'Lead generation, prospecting, sales pipeline development and conversion strategies.',
-      icon: null,
+        'End-to-end strategy, campaign structure, custom audience creation, and pixel/CAPI tracking integration.',
+      icon: FaMeta,
     },
     {
-      title: 'Business Development',
+      title: 'Precision Audience Targeting',
       description:
-        'Market research, opportunity identification, partnerships and growth strategies.',
-      icon: null,
-    },
-    {
-      title: 'Client Acquisition',
-      description:
-        'Building effective acquisition processes and converting qualified prospects into customers.',
-      icon: null,
-    },
-    {
-      title: 'Lead Generation',
-      description:
-        'Finding and nurturing relevant prospects through targeted outreach and digital channels.',
+        'In-depth market research, custom lookalikes, retargeting funnels, and high-intent customer segmentation.',
       icon: FiTarget,
     },
     {
-      title: 'Partnership Development',
+      title: 'A/B Testing & Optimization',
       description:
-        'Creating strategic relationships with companies, agencies and potential business partners.',
-      icon: FaHandshake,
+        'Continuous testing of ad creatives, copies, headlines, and angles to lower acquisition costs (CAC).',
+      icon: FiLayers,
     },
     {
-      title: 'Sales Strategy & Consulting',
+      title: 'ROAS & Revenue Scaling',
       description:
-        'Developing practical sales strategies focused on measurable business outcomes.',
+        'Data-backed budget allocation and campaign scaling for e-commerce & lead generation across US & EU markets.',
       icon: FiTrendingUp,
+    },
+    {
+      title: 'Ad Creative Strategy',
+      description:
+        'Developing high-converting video and image ad frameworks tailored specifically for Facebook & Instagram feeds and Reels.',
+      icon: FiPieChart,
+    },
+    {
+      title: 'Ad Account Audit & Consulting',
+      description:
+        'In-depth analysis of past campaign data to fix performance bottlenecks and rebuild profitable ad funnels.',
+      icon: FiDollarSign,
     },
   ];
 
@@ -100,7 +103,7 @@ export default function Services() {
             </p>
           </div>
           <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            How I Help Businesses <span className="text-orange-500">Grow</span>
+            High-Performance <span className="text-orange-500">Meta Ad Services</span>
           </h2>
         </div>
 
@@ -117,7 +120,7 @@ export default function Services() {
                 className="group relative flex flex-col justify-between rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-neutral-900/50 p-6 sm:p-8 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:border-orange-500/30 transition-all duration-300"
               >
                 <div>
-                  {/* Optional Icon Header */}
+                  {/* Icon Header */}
                   {IconComponent && (
                     <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500/10 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white">
                       <IconComponent className="h-5 w-5" />

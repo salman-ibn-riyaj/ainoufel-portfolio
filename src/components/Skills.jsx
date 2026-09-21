@@ -6,16 +6,17 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
+  FiTarget,
   FiTrendingUp,
-  FiCompass,
-  FiFilter,
-  FiUserPlus,
   FiSliders,
-  FiUsers,
-  FiLink,
-  FiDatabase,
-  FiSearch,
+  FiPieChart,
+  FiLayers,
+  FiEye,
+  FiActivity,
+  FiDollarSign,
+  FiRefreshCw,
 } from 'react-icons/fi';
+import { FaMeta } from 'react-icons/fa6';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,15 +27,15 @@ export default function Skills() {
   const cardsRef = useRef([]);
 
   const skillsData = [
-    { name: 'Sales Strategy', percentage: 95, icon: FiTrendingUp },
-    { name: 'Business Development', percentage: 95, icon: FiCompass },
-    { name: 'Lead Generation', percentage: 90, icon: FiFilter },
-    { name: 'Client Acquisition', percentage: 90, icon: FiUserPlus },
-    { name: 'Negotiation', percentage: 88, icon: FiSliders },
-    { name: 'Relationship Management', percentage: 92, icon: FiUsers },
-    { name: 'Strategic Partnerships', percentage: 85, icon: FiLink },
-    { name: 'CRM', percentage: 88, icon: FiDatabase },
-    { name: 'Market Research', percentage: 84, icon: FiSearch },
+    { name: 'Meta Ads Manager', percentage: 98, icon: FaMeta },
+    { name: 'Audience Targeting & Lookalikes', percentage: 95, icon: FiTarget },
+    { name: 'ROAS & Conversion Scaling', percentage: 94, icon: FiTrendingUp },
+    { name: 'Creative Strategy & Testing', percentage: 92, icon: FiPieChart },
+    { name: 'Pixel & CAPI Tracking', percentage: 90, icon: FiActivity },
+    { name: 'Retargeting Funnels', percentage: 92, icon: FiRefreshCw },
+    { name: 'Ad Copy & Creative Angles', percentage: 88, icon: FiLayers },
+    { name: 'Budget Optimization (CBO/ABO)', percentage: 95, icon: FiSliders },
+    { name: 'Ad Account Auditing', percentage: 86, icon: FiEye },
   ];
 
   // GSAP ScrollTrigger Animations
@@ -100,12 +101,12 @@ export default function Skills() {
           <div className="flex items-center gap-2 mb-2">
             <span className="h-[2px] w-5 bg-orange-500" />
             <p className="text-xs font-bold uppercase tracking-widest text-orange-500">
-              SKILLS
+              SKILLS & EXPERTISE
             </p>
           </div>
           <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-            Sales & Business Development <br />
-            <span className="text-orange-500">Skills</span>
+            Meta Advertising & Paid Social <br />
+            <span className="text-orange-500">Core Competencies</span>
           </h2>
         </div>
 
