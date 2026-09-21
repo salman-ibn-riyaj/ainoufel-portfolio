@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FiLinkedin, FiFacebook, FiPhone, FiMail } from 'react-icons/fi';
+import { FaInstagram } from 'react-icons/fa6';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,15 +25,33 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: FiLinkedin, href: 'https://linkedin.com/in/nasim-islam-7a776b332', label: 'LinkedIn' },
-    { icon: FiFacebook, href: '#', label: 'Facebook' },
-    { icon: FiPhone, href: 'tel:+8801781581895', label: 'Phone' },
-    { icon: FiMail, href: 'mailto:nasimislamspsc@gmail.com', label: 'Email' },
+    {
+      icon: FiLinkedin,
+      href: 'https://www.linkedin.com/in/azmain-iktider-noufel/',
+      label: 'LinkedIn',
+    },
+    {
+      icon: FiFacebook,
+      href: 'https://www.facebook.com/azmain.iktider.noufel',
+      label: 'Facebook',
+    },
+    {
+      icon: FaInstagram,
+      href: 'https://www.instagram.com/_azmain.iktider.noufel_',
+      label: 'Instagram',
+    },
+    {
+      icon: FiMail,
+      href: 'mailto:azmainiktidernoufel@gmail.com',
+      label: 'Email',
+    },
   ];
 
   // GSAP Scroll Animations
   useGSAP(
     () => {
+      if (!contentRef.current) return;
+
       gsap.fromTo(
         contentRef.current.children,
         { y: 30, opacity: 0 },
@@ -86,7 +105,7 @@ export default function Footer() {
             </p>
 
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed">
-              Building relationships, opening opportunities and driving sustainable revenue growth.
+              Building relationships, opening opportunities, and driving sustainable revenue growth.
             </p>
           </div>
 
@@ -110,19 +129,21 @@ export default function Footer() {
           </div>
 
           {/* Connect Section (4 Cols) */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 space-y-4">
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
               CONNECT
             </p>
 
             {/* Social Icons Row */}
-            <div className="flex items-center gap-2.5 mb-5">
+            <div className="flex items-center gap-2.5">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
                   <motion.a
                     key={social.label}
                     href={social.href}
+                    target={social.href.startsWith('http') ? '_blank' : undefined}
+                    rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     aria-label={social.label}
                     whileHover={{ y: -3, scale: 1.08 }}
                     whileTap={{ scale: 0.95 }}
@@ -134,13 +155,16 @@ export default function Footer() {
               })}
             </div>
 
-            {/* Email Contact Link */}
-            <a
-              href="mailto:nasimislam.business@gmail.com"
-              className="inline-block text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-500 transition-colors duration-200"
-            >
-              nasimislamspsc@gmail.com
-            </a>
+            {/* Email Contact Direct Action */}
+            <div className="pt-1">
+              <a
+                href="mailto:azmainiktidernoufel@gmail.com"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-500 transition-colors duration-200"
+              >
+                <FiMail className="h-4 w-4 text-orange-500" />
+                <span>azmainiktidernoufel@gmail.com</span>
+              </a>
+            </div>
           </div>
         </div>
 

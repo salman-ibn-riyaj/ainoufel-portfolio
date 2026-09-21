@@ -16,6 +16,7 @@ import {
   FiPhone,
   FiAlertCircle,
 } from 'react-icons/fi';
+import { FaFacebook, FaInstagram } from 'react-icons/fa6';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,7 +44,7 @@ export default function Contact() {
     setErrorMessage('');
 
     // Replace YOUR_FORMSPREE_FORM_ID with your Formspree endpoint key
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_FORM_ID';
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnpnpvbw';
 
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -163,10 +164,10 @@ export default function Contact() {
                   EMAIL
                 </p>
                 <a
-                  href="mailto:nasimislamspsc@gmail.com"
+                  href="mailto:azmainiktidernoufel@gmail.com"
                   className="text-sm font-bold text-slate-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-500 transition-colors"
                 >
-                  nasimislamspsc@gmail.com
+                  azmainiktidernoufel@gmail.com
                 </a>
               </div>
             </div>
@@ -204,16 +205,18 @@ export default function Contact() {
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
               {[
-                { icon: FiLinkedin, href: 'https://linkedin.com/in/nasim-islam-7a776b332' },
-                { icon: FiFacebook, href: '#' },
-                { icon: FiPhone, href: 'tel:+8801781581895' },
-                { icon: FiMail, href: 'mailto:nasimislamspsc@gmail.com' },
+                { icon: FiLinkedin, href: 'https://www.linkedin.com/in/azmain-iktider-noufel', external: true },
+                { icon: FiFacebook, href: 'https://www.facebook.com/azmain.iktider.noufel', external: true },
+                { icon: FaInstagram, href: 'https://www.instagram.com/_azmain.iktider.noufel_', external: false },
+                { icon: FiMail, href: 'mailto:azmainiktidernoufel@gmail.com', external: false },
               ].map((social, i) => {
                 const Icon = social.icon;
                 return (
                   <a
                     key={i}
                     href={social.href}
+                    target={social.external ? '_blank' : undefined}
+                    rel={social.external ? 'noopener noreferrer' : undefined}
                     className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-slate-600 dark:text-slate-400 hover:border-orange-500 hover:text-orange-500 transition-all duration-300 shadow-sm"
                   >
                     <Icon className="h-4 w-4" />
@@ -338,12 +341,14 @@ export default function Contact() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="flex items-start gap-3 rounded-2xl border border-orange-500/30 bg-orange-500/10 p-4 text-orange-700 dark:text-orange-300"
+                      className="flex items-start gap-3 rounded-2xl border border-emerald-500/40 bg-emerald-50 dark:bg-emerald-950/60 p-4 text-emerald-900 dark:text-emerald-200 backdrop-blur-md"
                     >
-                      <FiCheckCircle className="h-5 w-5 text-orange-500 shrink-0 mt-0.5" />
+                      <FiCheckCircle className="h-5 w-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-sm font-bold">Message sent!</p>
-                        <p className="text-xs text-orange-600/90 dark:text-orange-300/90 mt-0.5">
+                        <p className="text-sm font-bold text-emerald-900 dark:text-emerald-100">
+                          Message sent!
+                        </p>
+                        <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-0.5">
                           Thanks for reaching out — I'll get back to you within 24 hours.
                         </p>
                       </div>
@@ -358,10 +363,10 @@ export default function Contact() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="flex items-center gap-3 rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-red-600 dark:text-red-400"
+                      className="flex items-center gap-3 rounded-2xl border border-red-500/40 bg-red-50 dark:bg-red-950/60 p-4 text-red-900 dark:text-red-200 backdrop-blur-md"
                     >
-                      <FiAlertCircle className="h-5 w-5 text-red-500 shrink-0" />
-                      <p className="text-xs font-medium">{errorMessage}</p>
+                      <FiAlertCircle className="h-5 w-5 text-red-600 dark:text-red-400 shrink-0" />
+                      <p className="text-xs font-medium text-red-800 dark:text-red-200">{errorMessage}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

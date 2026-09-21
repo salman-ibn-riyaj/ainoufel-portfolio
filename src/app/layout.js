@@ -15,17 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Nasim Islam - Portfolio",
-  description: "Digital marketer, sales executive",
+  title: "Azmain Iktider Noufel - Portfolio",
+  description: "Meta ads specialist, ROAS specialist,Digital marketer, sales executive",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
       suppressHydrationWarning
-      data-theme="light"
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} light h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Providers>
@@ -33,7 +32,6 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </Providers>
-
       </body>
     </html>
   );

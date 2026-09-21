@@ -6,10 +6,9 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function ThemeSwitch() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Prevent hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -20,7 +19,7 @@ export function ThemeSwitch() {
     );
   }
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <motion.button
@@ -28,7 +27,8 @@ export function ThemeSwitch() {
       whileTap={{ scale: 0.9 }}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle Theme"
-      className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200/50 dark:border-neutral-700/50 bg-slate-100/50 dark:bg-neutral-800/50 text-slate-700 dark:text-slate-200 backdrop-blur-md shadow-sm transition-colors"
+      type="button"
+      className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-slate-200/50 dark:border-neutral-700/50 bg-slate-100/50 dark:bg-neutral-800/50 text-slate-700 dark:text-slate-200 backdrop-blur-md shadow-sm transition-colors"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
@@ -41,7 +41,7 @@ export function ThemeSwitch() {
           {isDark ? (
             <FiSun className="h-5 w-5 text-amber-400" />
           ) : (
-            <FiMoon className="h-5 w-5 text-slate-700" />
+            <FiMoon className="h-5 w-5 text-slate-700 dark:text-slate-200" />
           )}
         </motion.div>
       </AnimatePresence>
